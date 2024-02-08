@@ -1,6 +1,7 @@
 <script>
 
 import axios from 'axios';
+import CharacterItem from './CharacterItem.vue';
 
 export default {
     name: 'AppMain',
@@ -21,6 +22,9 @@ export default {
 
                 console.log(this.characters);
             })
+    },
+    components: {
+        CharacterItem
     }
 }
 </script>
@@ -28,16 +32,11 @@ export default {
     <main>
         <div class="container">
             <div class="row">
-                <div class="col-12 col-sm-6 col-lg-4" v-for="character in characters" :key="character.id + 'character'">
-                    <div class="card">
-                        <img :src="character.image" alt="">
-                        <div class="card-info">
-                            {{ character.name }}
-                            {{ character.species }}
-                            {{ character.status }}
-                        </div>
-                    </div>
-                </div>
+
+                <CharacterItem v-for="character in characters" :key="character.id + '_character'" :character="character">
+                </CharacterItem>
+
+
             </div>
         </div>
     </main>

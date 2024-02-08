@@ -4,6 +4,10 @@
     box-sizing: border-box;
 }
 
+body {
+    background-color: #9a8dcd;
+}
+
 img {
     max-width: 100%;
 }
